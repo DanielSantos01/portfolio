@@ -1,0 +1,88 @@
+body{
+  font-family: 'Sriracha', cursive;
+}
+
+/* HEADER */
+.navbar{
+  background-color: cadetblue;
+  border-radius: 10px;
+}
+
+#main-photo{
+  margin: 5px 0px 10px 50px;
+  width: 77px;
+}
+
+.navbar-brand{
+  margin-top: 30px;
+  padding: 25px 0px 0px 20px;
+}
+
+.navbar-brand a{
+  font-size: 1.1em;
+  margin-top: 15px;
+  color: rgba(15, 25, 39, 0.7);
+}
+
+.navbar-brand span{
+  color: white;
+}
+
+#btn{
+  margin-top: 35px;
+}
+
+/**/
+
+
+                                        /* Media Queries */
+/* Large devices */
+@media (min-width: 1200px){
+
+}
+
+ /* Medium devices */
+@media (min-width: 992px){
+
+}
+
+/* Small devices */
+@media (min-width: 768px){
+  .nav{
+    width: 40%;
+  }
+
+  ul#nav-list{
+    margin-top: 25px;
+    margin-right: 0px;
+    margin-left: 20px;
+  }
+
+  ul#nav-list li{
+    margin-right: 5px;
+  }
+
+  ul#nav-list li:nth-child(3){
+    margin-right: 25px;
+  }
+}
+
+/* Extra Small Devices*/
+@media (min-width: 480px){
+  .navbar-brand{
+    margin-left: -15px;
+  }
+}
+
+/* Super Extra Small */
+@media (max-width: 479px){
+  .navbar-brand{
+    padding-left: 3px;
+    font-size: 1em;
+  }
+
+  #main-photo{
+    margin-left: 0px;
+    width: 70px;
+  }
+}
