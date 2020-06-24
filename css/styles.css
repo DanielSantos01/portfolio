@@ -1,21 +1,24 @@
+/*                                           GENERAL STYLE                                        */
 body{
   font-family: 'Sriracha', cursive;
 }
 
-/* HEADER */
+/*                                               HEADER                                           */
 .navbar{
   background-color: cadetblue;
   border-radius: 10px;
+  border: 1px solid rgba(95, 158, 160, 0.534);
 }
 
 #main-photo{
-  margin: 5px 0px 10px 50px;
-  width: 77px;
+  margin: 5px 0px 10px 0px;
+  width: 70px;
 }
 
 .navbar-brand{
   margin-top: 30px;
-  padding: 25px 0px 0px 20px;
+  padding: 25px 0px 0px 3px;
+  font-size: 1em;
 }
 
 .navbar-brand a{
@@ -32,24 +35,44 @@ body{
   margin-top: 35px;
 }
 
-/**/
+.navbar-default .navbar-nav > li > a{
+  color: rgba(15, 25, 39, 0.7);
+}
+
+.navbar-default .navbar-nav > li > a{
+  text-align: center;
+  transition: 1s;
+}
+
+.navbar-default .navbar-nav > li > a:hover{
+  color: white;
+  background-color: rgb(65, 109, 105, .7);
+}
 
 
-                                        /* Media Queries */
+/*                                           MEDIA QUERIES                                      */
+
 /* Large devices */
 @media (min-width: 1200px){
-
+  #main-photo{
+    margin: 5px 0px 10px 50px;
+    width: 77px;
+  }
 }
 
  /* Medium devices */
 @media (min-width: 992px){
-
+  
 }
 
 /* Small devices */
 @media (min-width: 768px){
   .nav{
     width: 40%;
+  }
+
+  .navbar > .container-fluid .navbar-brand{
+    margin-left: 0px;
   }
 
   ul#nav-list{
@@ -65,24 +88,15 @@ body{
   ul#nav-list li:nth-child(3){
     margin-right: 25px;
   }
+
+  .navbar-default .navbar-nav > li > a:hover{
+    background-color: rgba(95, 158, 160, 0.534);
+  }
 }
 
 /* Extra Small Devices*/
 @media (min-width: 480px){
   .navbar-brand{
-    margin-left: -15px;
-  }
-}
-
-/* Super Extra Small */
-@media (max-width: 479px){
-  .navbar-brand{
-    padding-left: 3px;
-    font-size: 1em;
-  }
-
-  #main-photo{
-    margin-left: 0px;
-    width: 70px;
+    font-size: 1.2em;
   }
 }
