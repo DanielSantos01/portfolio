@@ -47,6 +47,41 @@ body{
   background-color: rgb(65, 109, 105, .7);
 }
 
+/*                                          MAIN CONTENT                                        */
+.poly{
+  width: 70px;
+  height: 70px;
+  background-color: cadetblue;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+#presentation{
+  font-size: 1.2em;
+}
+
+#right{
+  float: right;
+}
+
+#left{
+  float: left;
+}
+
+.clear{
+  clear: both;
+}
+ .high{
+   height: 40px;
+ }
+
+/*                                              FOOTER                                          */
+.panel-footer{
+  background-color: cadetblue;
+}
+
+.panel-footer p{
+  margin-bottom: 0px;
+}
 
 /*                                           MEDIA QUERIES                                      */
 
@@ -56,11 +91,17 @@ body{
     margin: 5px 0px 10px 50px;
     width: 77px;
   }
+
+  div.container-fluid div.high{
+    height: 150px;
+  }
 }
 
  /* Medium devices */
 @media (min-width: 992px){
-  
+  div.container-fluid .high{
+    height: 90px;
+  }
 }
 
 /* Small devices */
@@ -84,6 +125,10 @@ body{
   .navbar-default .navbar-nav > li > a{
     padding-bottom: 0px;
     font-size: 1.12em;
+  }
+
+  .high{
+    height: 70px;
   }
 }
 
