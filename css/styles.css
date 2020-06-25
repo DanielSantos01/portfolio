@@ -1,163 +1,238 @@
-/*                                           GENERAL STYLE                                        */
+/*---------------------------------------------GENERAL STYLE----------------------------------------*/
+*{
+  margin: 0;
+  padding: 0;
+}
+
 body{
   font-family: 'Sriracha', cursive;
 }
 
-/*                                               HEADER                                           */
+a:hover{
+text-decoration: none;
+}
+/*----------------------------------------END OF GENERAL STYLE-------------------------------------*/
+
+
+/*------------------------------------------------HEADER-------------------------------------------*/
+/*NAVEGATION BAR*/
 .navbar{
   background-color: cadetblue;
   border-radius: 10px;
   border: 1px solid rgba(95, 158, 160, 0.534);
 }
 
+
+/*SITE LOGO*/
 #main-photo{
   margin: 5px 0px 10px 0px;
   width: 70px;
 }
 
+
+/*SITE TITLE*/
 .navbar-brand{
   margin-top: 30px;
   padding: 25px 0px 0px 3px;
   font-size: 1em;
 }
-
 .navbar-brand a{
   font-size: 1.1em;
   margin-top: 15px;
   color: rgba(15, 25, 39, 0.7);
 }
-
 .navbar-brand span{
   color: white;
 }
 
+
+/*TOGGLE BUTTON*/
 #btn{
   margin-top: 35px;
 }
 
+/*MENU ITEMS*/
 .navbar-default .navbar-nav > li > a{
   color: rgba(15, 25, 39, 0.7);
   text-align: center;
   padding: 10px 0px 10px 0px;
   transition: 1s;
 }
-
 .navbar-default .navbar-nav > li > a:hover{
   color: white;
   background-color: rgb(65, 109, 105, .7);
 }
+/*-----------------------------------------END OF HEADER------------------------------------------*/
 
-/*                                          MAIN CONTENT                                        */
-/* Formatação dos poligonos */
-.poly{
-  width: 70px;
-  height: 70px;
-  background-color: rgba(95, 158, 160, 0.733);
-  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-}
 
+
+/*------------------------------------------MAIN CONTENT------------------------------------------*/
+/*PAGE TITLE*/
 h2#presentation-title{
   font-size: 2em;
   text-shadow: 2px 2px 5px rgb(128, 192, 194);
 }
 
+
+/*PAGE TEXT*/
 .presentation{
   font-size: 1.2em;
 }
-
 .presentation abbr{
   text-decoration: none;
 }
-
-a#back{
-  color: cadetblue;
-}
-
 abbr{
   transition: 1s;
 }
-
 abbr:hover{
   color: cadetblue;
 }
 
-.clear{
-  clear: both;
+
+/*PAGE LINK TO TOP*/
+a#back{
+  color: cadetblue;
 }
 
+
+/*PAGE IMAGE*/
 #my-image{
   clip-path: circle(40%);
   margin-left: auto;
   margin-right: auto;
   transition: 1s;
 }
-
-#my-image:hover, #my-image:active{
-  transform: scale(1.1);
-}
+/*--------------------------------------END OF MAIN CONTENT---------------------------------------*/
 
 
-/*                                              FOOTER                                          */
+
+/*---------------------------------------------FOOTER---------------------------------------------*/
 .panel-footer{
   background-color: cadetblue;
 }
-
 .panel-footer p{
   margin-bottom: 0px;
+  font-size: 1.1em;
+}
+.panel-footer hr{
+  width: 30%;
+  margin: 5px auto 5px auto;
+  border-top: 1px solid rgb(105, 134, 151);
 }
 
-/*                                           MEDIA QUERIES                                      */
 
-/* Large devices */
+/*SOCIAL MEDIAS*/
+.center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.center > a{
+  margin-top: 10px;
+}
+
+/*DEVELOPER CREDITS*/
+.container > .text-center{
+  margin-top: 15px;
+}
+
+/*NEW QUERY XXS*/
+.col-xxs-12{
+  width: 100%;
+  margin-top: 10px; 
+}
+
+
+/*FLAGS*/
+.hidden-xxs{
+  display: none;
+}
+.visible-xxs{
+  display: block;
+}
+/*--------------------------------------------END FOOTER------------------------------------------*/
+
+
+
+/*-------------------------------------------MEDIA QUERIES----------------------------------------*/
+
+/* LARGE DEVICES */
 @media (min-width: 1200px){
+  /*SITE LOGO*/
   #main-photo{
     margin: 5px 0px 10px 50px;
     width: 77px;
   }
 
+
+  /*SITE TITLE*/
   .navbar-brand a{
     font-size: 1.3em;
   }
-}
 
- /* Medium devices */
+}/* END OF LARGE DEVICES */
+
+
+
+ /* MEDIUM DEVICES */
 @media (min-width: 992px){
   
-}
+}/* END OF MEDIUM DEVICES */
 
-/* Small devices */
+
+
+/* SMALL DEVICES  */
 @media (min-width: 768px){
-  /* Header */
+  /*NAVEGATION BAR*/
   .nav{
     width: 40%;
   }
 
+
+  /*SITE TITLE*/
   .navbar > .container-fluid .navbar-brand{
     margin-left: 0px;
   }
 
+
+  /*MENU LIST*/
   ul#nav-list{
     margin: 25px 0px 0px 20px;
   }
 
-  .navbar-default .navbar-nav > li > a:hover{
-    background-color: rgba(95, 158, 160, 0.534);
-  }
 
+  /*MENU ITEMS*/
   .navbar-default .navbar-nav > li > a{
     padding-bottom: 0px;
     font-size: 1.12em;
   }
-}
+  .navbar-default .navbar-nav > li > a:hover{
+    background-color: rgba(95, 158, 160, 0.534);
+  }
 
-/* Extra Small Devices*/
+}/*END OF SMALL DEVICES*/
+
+
+
+/* EXTRA SMALL DEVICES */
 @media (min-width: 480px){
+  /*SITE TITLE*/
   .navbar-brand{
     font-size: 1.2em;
   }
 
-  .poly{
-    width: 100px;
-    height: 100px;
+  /*FLAGS*/
+  .visible-xxs{
+    display: none;
   }
-}
+
+  .hidden-xxs{
+    display: block;
+  }
+
+  /*COLUMN SET*/
+  .col-xs-4{
+    width: 33.33333%;
+  }
+
+}/*END OF EXTRA SMALL DEVICES*/
