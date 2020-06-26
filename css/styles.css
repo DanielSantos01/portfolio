@@ -73,9 +73,17 @@ text-decoration: none;
 /*PAGE TITLE*/
 h2#page-title{
   font-size: 2em;
-  text-shadow: 2px 2px 5px rgb(128, 192, 194);
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.418);
+  margin-bottom: 25px;
 }
 
+.white{
+  background-color: rgba(0, 0, 0, 0.055);
+  padding: 0px 10px 25px 10px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  box-shadow: 1px 1px 4px grey;
+}
 
 /*PAGE TEXT*/
 .presentation{
@@ -99,11 +107,45 @@ a#back{
 
 
 /*PAGE IMAGE*/
-#my-image{
-  clip-path: circle(40%);
+.content-image{
+  clip-path: circle(35%);
+  margin: 10px auto 10px auto;
+  transition: 1s;
+  background: rgba(128, 128, 128, 0.514);
+}
+.content-image.dinamic:hover{
+  clip-path: circle(70%);
+  background: rgba(128, 128, 128, 0.103);
+}
+
+
+/*Carreira*/
+.content{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 4px grey;
+  margin-top: 20px;
+}
+.content p{
+  margin-top: 20px;
+  font-size: 1.15em;
+}
+
+#if > img{
+  margin-bottom: 50px;
+}
+
+h3#img-subtitle{
   margin-left: auto;
   margin-right: auto;
-  transition: 1s;
+  padding-bottom: 3px;
+  padding-top: 3px;
+  font-style: italic;
+  font-size: 1em;
+  width: 20vw;
+  background-color: rgba(0, 0, 0, 0.055);
+  border-radius: 100px;
 }
 /*--------------------------------------END OF MAIN CONTENT---------------------------------------*/
 
@@ -219,6 +261,10 @@ a#back{
     background-color: rgba(95, 158, 160, 0.534);
   }
 
+
+  .content{
+    margin-top: 40px;
+  }
 }/*END OF SMALL DEVICES*/
 
 
