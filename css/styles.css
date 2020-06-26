@@ -18,7 +18,6 @@ text-decoration: none;
 /*NAVEGATION BAR*/
 .navbar{
   background-color: cadetblue;
-  border-radius: 10px;
   border: 1px solid rgba(95, 158, 160, 0.534);
 }
 
@@ -58,9 +57,13 @@ text-decoration: none;
   padding: 10px 0px 10px 0px;
   transition: 1s;
 }
-.navbar-default .navbar-nav > li > a:hover{
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:active{
   color: white;
   background-color: rgb(65, 109, 105, .7);
+}
+
+.navbar-default .navbar-nav > li.set a{
+  color: white;
 }
 /*-----------------------------------------END OF HEADER------------------------------------------*/
 
@@ -68,7 +71,7 @@ text-decoration: none;
 
 /*------------------------------------------MAIN CONTENT------------------------------------------*/
 /*PAGE TITLE*/
-h2#presentation-title{
+h2#page-title{
   font-size: 2em;
   text-shadow: 2px 2px 5px rgb(128, 192, 194);
 }
@@ -167,7 +170,13 @@ a#back{
 
   /*SITE TITLE*/
   .navbar-brand a{
-    font-size: 1.3em;
+    font-size: 1.4em;
+  }
+
+
+  /*PAGE TITLE*/
+  h2#page-title{
+    font-size: 2.5em;
   }
 
 }/* END OF LARGE DEVICES */
