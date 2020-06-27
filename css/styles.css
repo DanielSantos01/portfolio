@@ -6,6 +6,7 @@
 
 body{
   font-family: 'Sriracha', cursive;
+  background-color: rgba(0, 0, 0, 0.055);
 }
 
 a:hover{
@@ -77,13 +78,6 @@ h2#page-title{
   margin-bottom: 25px;
 }
 
-.white{
-  background-color: rgba(0, 0, 0, 0.055);
-  padding: 0px 10px 25px 10px;
-  border-radius: 20px;
-  margin-bottom: 20px;
-  box-shadow: 1px 1px 4px grey;
-}
 
 /*PAGE TEXT*/
 .presentation{
@@ -121,11 +115,12 @@ a#back{
 
 /*Carreira*/
 .content{
+  background-color: white;
   padding-top: 10px;
   padding-bottom: 10px;
   border-radius: 5px;
   box-shadow: 1px 1px 4px grey;
-  margin-top: 20px;
+  margin-bottom: 20px;
 }
 .content p{
   margin-top: 20px;
@@ -176,10 +171,12 @@ h3#img-subtitle{
   margin-top: 10px;
 }
 
+
 /*DEVELOPER CREDITS*/
 .container > .text-center{
   margin-top: 15px;
 }
+
 
 /*NEW QUERY XXS*/
 .col-xxs-12{
@@ -221,6 +218,8 @@ h3#img-subtitle{
     font-size: 2.5em;
   }
 
+
+  /*CAREER SECTIONS TITLE*/
   .content > h3#img-subtitle{
     width: 20vw;
   }
@@ -266,10 +265,15 @@ h3#img-subtitle{
   }
 
 
-  .content{
-    margin-top: 40px;
+  /*CAREER TITLE*/
+  h2#page-title{
+    margin-bottom: 35px;
   }
 
+  /*CAREER SECTIONS*/
+  .content{
+    margin-top: 20px;
+  }
   h3#img-subtitle{
     width: 30vw;
   }
@@ -288,10 +292,10 @@ h3#img-subtitle{
   .visible-xxs{
     display: none;
   }
-
   .hidden-xxs{
     display: block;
   }
+
 
   /*COLUMN SET*/
   .col-xs-4{
