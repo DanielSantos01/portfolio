@@ -67,10 +67,10 @@ document.addEventListener('DOMContentLoaded', function(event){
                 msg += 'o perfil :)';
 
             }else if(currentPage === 'li-done'){
-                msg += 'a carreira :)';
+                msg += 'os Feitos :)';
 
             }else{
-                msg += 'os feitos :)';
+                msg += 'a Carreira :)';
 
             }
             document.getElementById('msg').textContent = msg;
