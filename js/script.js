@@ -36,8 +36,20 @@ document.addEventListener('DOMContentLoaded', function(event){
         alternateMainContent('snippets/done-snippet.html', 'li-done');
     });
 
+
+    function insertHTML(selector, html){
+        document.querySelector(selector).innerHTML = html;
+    };
+
+    function showLoading(selector){
+        let html = "<div class='text-center'>";
+        html += "<h2 class='text-center'>Loading ;)</h2></div>";
+        insertHTML(selector, html);
+    };
+
     //alterna a visualização do conteúdo principal
     function alternateMainContent(url, newSet){
+        //showLoading('#main-content');
         $ajax.makeRequest(url, function(response){
             document.querySelector('#main-content').innerHTML = response;
 
