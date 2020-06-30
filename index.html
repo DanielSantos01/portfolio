@@ -3,11 +3,23 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Daniel N. Santos - Perfil</title>
+
+        <!-- main page title -->
+        <title id="titulo">Daniel N. Santos - Perfil</title>
+
+        <!-- tab icon -->
         <link rel="sortcut icon" href="images/logos/favicon.ico" type="image/x-icon" />
+
+        <!-- stylesheets -->
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/styles.css">
+
+        <!-- importing google font -->
         <link href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap" rel="stylesheet">
+
+        <!-- javascipt files -->
+        <script src="js/ajax.js"></script>
+        <script src="js/script.js"></script>
     </head>
     <body>
         <!-- Cabeçalho -->
@@ -16,11 +28,11 @@
             <nav class="navbar navbar-default">
                 <div class="container-fluid">
                     <div class="navbar-header">
-                        <a id="logo-link" href="index.html" class="pull-left">
+                        <a id="logo-link" href="#" class="pull-left">
                             <img id="main-photo" src="images/logos/logo.png" alt="Logo" width="150" height="77">
                         </a>
-                        <div class="navbar-brand">
-                            <a href="index.html">
+                        <div id="brand" class="navbar-brand">
+                            <a href="#">
                                 <span>D</span>aniel 
                                 <span>N</span>ascimento dos 
                                 <span>S</span>antos
@@ -38,24 +50,24 @@
                     <div id="collapsable-nav" class="collapse navbar-collapse">
                         <!-- Menu list -->
                         <ul id="nav-list" class="nav navbar-nav navbar-right">
-                            <li class="col-sm-4 set">
-                                <a href="#presentation-title" class="text-center">
+                            <li id="li-profile" class="col-sm-4 set">
+                                <a id="profile" href="#" class="text-center">
                                     <span class="glyphicon glyphicon-user"></span>
                                     <br class="hidden-xs">
                                     Perfil
                                 </a>
                             </li>
                             
-                            <li class="col-sm-4">
-                                <a href="feitos.html" class="text-center">
+                            <li id="li-done" class="col-sm-4">
+                                <a id="done" href="#" class="text-center">
                                     <span class="glyphicon glyphicon-ok"></span>
                                     <br class="hidden-xs">
                                     Feitos
                                 </a>
                             </li>
 
-                            <li class="col-sm-4">
-                                <a href="carreira.html" class="text-center">
+                            <li id="li-career" class="col-sm-4">
+                                <a id="career" href="#" class="text-center">
                                     <span class="glyphicon glyphicon-road"></span>
                                     <br class="hidden-xs">
                                     Carreira
@@ -67,29 +79,12 @@
             </nav><!-- end of #navbar-->
         </header><!-- end of header -->
 
+
+        <div id="msg" class="text-center"></div>
         <!-- Main content -->
-        <div class="container">
-            <!-- Main page title -->
-            <h2 id="page-title" class="text-center">Um pouco sobre mim</h2>
-            <div class="content">
-                <!-- Main Page image -->
-                <img class="img-responsive content-image" src="images/daniel.jpeg" alt="Daniel Santos">
+        <div id="main-content" class="container"></div>
 
-                <!-- Page text -->
-                <p class="text-center presentation">Daniel Nascimento dos Santos, recifense, técnico em   Eletrônica pelo IFPE, atualmente graduando de Sistemas de Informação na UFPE. Gosta de ler sobre o universo, admira a tecnologia e as mais diversas formas com que ela se apresenta. Ama música e programação, mas ama ainda mais ouvir música enquanto programa. <br>
-                <span class="glyphicon glyphicon-console"></span> <span class="glyphicon glyphicon-headphones"></span></p>
-            </div><!-- end of .content-->
 
-            <!-- link to the top of the page -->
-            <p class="text-center presentation">
-                <a id="back" href="#logo-link">
-                    <span class="glyphicon glyphicon-arrow-up"></span>
-                    Voltar ao topo
-                </a>
-            </p>
-        </div><!-- end of .container -->
-
-        <!-- Rodapé -->
         <!-- Rodapé -->
         <footer id="contact" class="panel-footer">
             <div class="container">
@@ -124,6 +119,5 @@
     <!-- jQuery (Bootstrap JS plugins depend on it) -->
     <script src="js/jquery-2.1.4.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/script.js"></script>
     </body>
 </html><!-- end of html content-->
