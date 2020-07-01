@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function(event){
 
         //verifica se o usuário está tentando ir para a mesma página que ele está
         if(currentSet === currentPage){
-            let msg = 'olá... você está visualizando ';
+            let msg = 'você já está visualizando ';
 
             if(currentPage === 'li-profile'){
                 msg += 'o perfil :)';
