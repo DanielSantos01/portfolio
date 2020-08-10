@@ -42,8 +42,7 @@ document.addEventListener('DOMContentLoaded', function(event){
     };
 
     function showLoading(selector){
-        let html = "<div class='text-center'>";
-        html += "<h2 class='text-center'>Loading ;)</h2></div>";
+        let html = "<div class='text-center'><h2 class='text-center'>Loading ;)</h2></div>";
         insertHTML(selector, html);
     };
 
