@@ -102,7 +102,7 @@ a#back{
 
 /*PAGE IMAGE*/
 .content-image{
-  clip-path: circle(35%);
+  clip-path: circle(30%);
   margin: 10px auto 10px auto;
   transition: 1s;
   background: rgba(128, 128, 128, 0.514);
