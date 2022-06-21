@@ -11,6 +11,11 @@
         logo: '#logo-link',
         career: '#career',
         done: '#done',
+        mainContent: '#main-content',
+        year: '#year',
+        collapsibleButon: '#btn',
+        collapsibleNavbar: '#collapsable-nav',
+        title: 'titulo',
       }
     };
 

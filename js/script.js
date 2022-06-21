@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function(_event) {
     let currentSet = tabs.profile;
 
     alternateMainContent('snippets/profile-snippet.html', tabs.profile);
-    document.querySelector('#year').innerHTML = new Date().getFullYear();
+    document.querySelector(ids.year).innerHTML = new Date().getFullYear();
 
     document.querySelector(ids.profile).addEventListener('click', (_event) => {
       if(!canGoTo(tabs.profile)) return;
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function(_event) {
       $ajax.makeRequest(
         url,
         function(response) {
-          document.querySelector('#main-content').innerHTML = response;
+          document.querySelector(ids.mainContent).innerHTML = response;
           if(newSet) alternateSet(newSet);
         },
         false,
@@ -52,22 +52,22 @@ document.addEventListener('DOMContentLoaded', function(_event) {
       if(currentSet === currentPage) return false;
       let tabName = 'Daniel N. Santos - ';
 
-      if(currentPage === 'li-profile') tabName += 'Perfil';
-      else if(currentPage === 'li-done') tabName += 'Feitos';
+      if(currentPage === tabs.profile) tabName += 'Perfil';
+      else if(currentPage === tabs.done) tabName += 'Feitos';
       else tabName += 'Carreira';
 
-      document.getElementById('titulo').textContent = tabName;
+      document.getElementById(ids.title).textContent = tabName;
       return true;
     };
 
     //faz com que o menu do botão se recolha quando ele perder o foco
-    document.querySelector('#btn').addEventListener(
+    document.querySelector(ids.collapsibleButton).addEventListener(
       'blur',
       function(_event) {
         let screenWidth = innerWidth;
         if(screenWidth < 768) {
           //$ é semelhante ao querySelector, mas usando pelo jQuery
-          $('#collapsable-nav').collapse('hide');
+          $(ids.collapsibleNavbar).collapse('hide');
         }
       },
     );
