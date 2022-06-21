@@ -1,118 +1,75 @@
-document.addEventListener('DOMContentLoaded', function(event){
+document.addEventListener('DOMContentLoaded', function(_event) {
+    const tabs = $data.tabs;
+    const ids = $data.ids;
+    let currentSet = tabs.profile;
 
+    alternateMainContent('snippets/profile-snippet.html', tabs.profile);
+    document.querySelector(ids.year).innerHTML = new Date().getFullYear();
 
-    let currentSet = 'li-profile';
-
-    //página inicial - automática
-    alternateMainContent('snippets/profile-snippet.html', 'li-profile');
-
-    //pagina inicial - onclick
-    document.querySelector('#profile').addEventListener('click', function(event){
-        checkPage('li-profile');
-        alternateMainContent('snippets/profile-snippet.html', 'li-profile');
+    document.querySelector(ids.profile).addEventListener('click', (_event) => {
+      if(!canGoTo(tabs.profile)) return;
+      alternateMainContent('snippets/profile-snippet.html', tabs.profile);
     });
 
-    //brand - onclick
-    document.querySelector('#brand').addEventListener('click', function(event){
-        checkPage('li-profile');
-        alternateMainContent('snippets/profile-snippet.html', 'li-profile');
+    document.querySelector(ids.brand).addEventListener('click', (_event) => {
+      if(!canGoTo(tabs.profile)) return;
+      alternateMainContent('snippets/profile-snippet.html', tabs.profile);
     });
 
-    //logo onclick
-    document.querySelector('#logo-link').addEventListener('click', function(event){
-        checkPage('li-profile');
-        alternateMainContent('snippets/profile-snippet.html', 'li-profile');
+    document.querySelector(ids.logo).addEventListener('click', (_event) => {
+      if(!canGoTo(tabs.profile)) return;
+      alternateMainContent('snippets/profile-snippet.html', tabs.profile);
     });
 
-    //página de carreira - onlclick
-    document.querySelector('#career').addEventListener('click', function(event){
-        checkPage('li-career');
-        alternateMainContent('snippets/career-snippet.html', 'li-career');
+    document.querySelector(ids.career).addEventListener('click', (_event) => {
+      if(!canGoTo(tabs.career)) return;
+      alternateMainContent('snippets/career-snippet.html', tabs.career);
     });
 
-    //página de feitos - onclick
-    document.querySelector('#done').addEventListener('click', function(event){
-        checkPage('li-done');
-        alternateMainContent('snippets/done-snippet.html', 'li-done');
+    document.querySelector(ids.done).addEventListener('click', (_event) => {
+      if(!canGoTo(tabs.done)) return;
+      alternateMainContent('snippets/done-snippet.html', tabs.done);
     });
 
-
-    function insertHTML(selector, html){
-        document.querySelector(selector).innerHTML = html;
+    function alternateMainContent(url, newSet) {
+      $ajax.makeRequest(
+        url,
+        function(response) {
+          document.querySelector(ids.mainContent).innerHTML = response;
+          if(newSet) alternateSet(newSet);
+        },
+        false,
+      );
     };
 
-    function showLoading(selector){
-        let html = "<div class='text-center'><h2 class='text-center'>Loading ;)</h2></div>";
-        insertHTML(selector, html);
+    function alternateSet(elementToSet) {
+      document.getElementById(currentSet).classList.remove('set');
+      document.getElementById(elementToSet).classList.add('set');
+      currentSet = elementToSet;
     };
 
-    //alterna a visualização do conteúdo principal
-    function alternateMainContent(url, newSet){
-        //showLoading('#main-content');
-        $ajax.makeRequest(url, function(response){
-            document.querySelector('#main-content').innerHTML = response;
+    function canGoTo(currentPage) {
+      if(currentSet === currentPage) return false;
+      let tabName = 'Daniel N. Santos - ';
 
-            if(newSet != undefined){
-                alternateSet(newSet);
-            }
-        }, false);
-    };
+      if(currentPage === tabs.profile) tabName += 'Perfil';
+      else if(currentPage === tabs.done) tabName += 'Feitos';
+      else tabName += 'Carreira';
 
-    //alterna a visualização da página que está setada no menu
-    function alternateSet(elementToSet){
-        document.getElementById(currentSet).classList.remove('set');
-        document.getElementById(elementToSet).classList.add('set');
-        currentSet = elementToSet;
-    };
-
-
-    //mostra um sutil anúncio na tela caso o usuário tente ir para uma página que ele já está
-    function checkPage(currentPage){
-        let tabName = 'Daniel N. Santos - ';
-
-        //verifica se o usuário está tentando ir para a mesma página que ele está
-        if(currentSet === currentPage){
-            let msg = 'você já está visualizando ';
-
-            if(currentPage === 'li-profile'){
-                msg += 'o perfil :)';
-
-            }else if(currentPage === 'li-done'){
-                msg += 'os Feitos :)';
-
-            }else{
-                msg += 'a Carreira :)';
-
-            }
-            document.getElementById('msg').textContent = msg;
-            document.getElementById('msg').style.display = 'block';
-
-        }else{
-            document.getElementById('msg').style.display = 'none';
-        }
-
-        if(currentPage === 'li-profile'){
-            tabName += 'Perfil';
-
-        }else if(currentPage === 'li-done'){
-            tabName += 'Feitos';
-
-        }else{
-            tabName += 'Carreira';
-
-        }
-
-        //atualiza o título da página
-        document.getElementById('titulo').textContent = tabName;
+      document.getElementById(ids.title).textContent = tabName;
+      return true;
     };
 
     //faz com que o menu do botão se recolha quando ele perder o foco
-    document.querySelector('#btn').addEventListener('blur', function(event){
+    document.querySelector(ids.collapsibleButton).addEventListener(
+      'blur',
+      function(_event) {
         let screenWidth = innerWidth;
-        if(screenWidth < 768){
-            //$ é semelhante ao querySelector, mas usando pelo jQuery
-            $('#collapsable-nav').collapse('hide');
+        if(screenWidth < 768) {
+          //$ é semelhante ao querySelector, mas usando pelo jQuery
+          $(ids.collapsibleNavbar).collapse('hide');
         }
-    });
+      },
+    );
 
 });
